@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/usr/src/python2.7-2.7.2/Misc/Vim'
+let g:netrw_dirhist_2='/home/naftali/Downloads/Abstract-Algebra/.git'
+let g:netrw_dirhist_3='/home/naftali/random/NAFPACK/src'
+let g:netrw_dirhist_4='/home/naftali/markovian/test'
+let g:netrw_dirhist_5='/home/naftali/markovian/learn/speedbenchmark'
+let g:netrw_dirhist_6='/home/naftali/markovian/test'
+let g:netrw_dirhist_7='/home/naftali/.vim/ftplugin'

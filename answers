@@ -1,0 +1,133 @@
+To mail the file message with subject "Hello" to yourself:
+mail naftaliharris@gmail.com -s Hello < message
+
+To copy file to a remote computer:
+scp file naftali@altair.cs.uchicago.edu:
+
+To permit displays when sshing into another computer: (-Y does this too, I believe)
+ssh -X altair.cs.uchicago.edu
+
+To write on somebody else's terminal:
+write pmcquighan
+
+To sort the nth field of file, instead of the first:
+sort -k n file
+
+To use math.h:
+gcc -lm ...
+
+To send email with reply saying "crescendo@uchicago.edu" and name saying 'Shengyu Wang':
+export REPLYTO=crescendo@uchicago.edu
+mail danyal.a.sheikh@gmail.com -aFrom:'Shengyu Wang <crescendo@uchicago.edu>' -s 'Foshizzle' < message
+
+This also works:
+sendmail -F 'John Smith' -f 'foo@foshizzle.com' naftaliharris@gmail.com < message 
+The first two lines of message should be: '
+Subject: I am the Lord!
+To: naftaliharris@gmail.com
+'
+
+Extract a tar file to a directory of same name:
+tar xf file.tar
+
+To tar the directory "foshizzle" to foshizzle.tgz  //add 'v' for verbose
+tar czf foshizzle.tgz foshizzle
+
+To record screen videos:
+First, you type the following, which opens up some kind of server:
+$ x11vnc -localhost -viewonly
+Then, you type this:
+$ ./flvrec.py localhost:0
+When you're done recording, just hit CTRL-C. The flash thing gets stored automatically in the current directory, and you can view it from nautilus.
+
+To concatenate pdf files to the file finished.pdf:
+gs -dBatch -sDEVICE=pdfwrite -sOutputFile=finished.pdf -dNOPAUSE filea.pdf fileb.pdf filec.pdf ...
+
+To cat file.doc to stdout:
+$ antiword file.doc
+
+To run a command on a remote machine, and automatically log off:
+$ ssh altair.cs.uchicago.edu 'echo "I am God"'
+
+To compile using pthreads:
+$ gcc prog.c -o prog -lpthread
+
+Your favorite pdf viewer:
+$ okular file.pdf
+
+Figure out your IP, MAC, and connection type:
+$ arp
+
+Listen in on TCP packets:
+$ tcpdump -n -i wlan0
+or 
+$ tcpdump -n -i eth1
+(use the Iface from `arp`)
+
+List all hardware: (takes 10s or so to run, funny initial output).
+$ sudo lshw -short
+"ls hardware"
+
+Changing vim file format to unix:
+:set ff=unix
+
+Run code nicely and then log out:
+$ screen nice R CMD BATCH --slave Rfile.R
+then, to detach the screen:
+C-a d
+then logout
+
+Create a text file from file.pdf: (or pdftohtml...)
+$ pdftotext file.pdf
+
+Script to view pdf in terminal (using above utilities)
+$ pdf file.pdf
+
+Decompile object file to assembly:
+$ objdump -d a.out
+
+Compile file.c only to assembly (to file.s):
+$ gcc -S file.c
+
+Install the R library dir, where dir is the library in working directory:
+$ sudo R CMD INSTALL dir
+
+Much better way to install R libraries: go to http://cran.r-project.org/web/views/ and follow directions
+
+Remove space from filename:
+$ despace file1
+
+Mount your windows files in /media :
+$ sudo mount -t ntfs /dev/sda2 /media
+
+Print the first column in a csv file: (-F 'x' means field delimited by x)
+cat companylist.csv | awk -F ',' '{print $1}'
+
+Suspend from terminal:
+$ pm-suspend
+
+Remove annoying carriage returns in vim, (especially from project gutenberg books)
+:%s/\r//g
+Even better:
+$ fromdos file
+
+Format file.c into however you like it:
+$ indent [option] file.c
+You like how -kr and -linux looks.
+
+Download files requiring username and password:
+Login with firefox. Export cookies to cookies.txt. (Tools... export cookies ; requires an add-on).
+$ wget --load-cookies cookies.txt -i filelist
+
+Sample specific lines in the file 'sample' from a file:
+$ awk 'FNR==NR{num[$1];next}(FNR in num)' sample file
+(Will always print the lines in order, regardless of order in sample).
+
+Add a directory to a computer on the network:
+$ svn import [directory] path
+
+Split pdfs:
+$ pdfsam
+
+Pretty json viewer:
+$ pjson

@@ -1,0 +1,4 @@
+!! Delete the caps lock key
+clear lock
+!! Make caps lock map to <esc>
+keycode 0x42 = Escape
