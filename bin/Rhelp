@@ -1,0 +1,4 @@
+#!/bin/bash
+# Written by Naftali Harris, for use in vim
+
+R --slave -e "pFrame = as.data.frame(installed.packages()); packages = as.character(pFrame\$Package); help(\"$1\", package=c(packages), try.all.packages=TRUE)"
