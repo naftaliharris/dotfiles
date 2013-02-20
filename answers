@@ -131,3 +131,8 @@ $ pdfsam
 
 Pretty json viewer:
 $ pjson
+
+Get the right aspect ratio in mplayer:
+After launching the video with
+$ mplayer video_file
+, just hit 'f'
