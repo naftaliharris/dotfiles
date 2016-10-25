@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/naftali/random/numutil/numutil'
-let g:netrw_dirhist_2='/home/naftali/random/numutil/test'
-let g:netrw_dirhist_3='/home/naftali/random/numutil/.git'
-let g:netrw_dirhist_4='/home/naftali/random/numutil/numutil'
-let g:netrw_dirhist_5='/usr/local/lib/python2.7/dist-packages/scikit_learn-0.12.1-py2.7-linux-i686.egg/sklearn/utils'
