@@ -4,7 +4,6 @@ Date: <+DATE+>
 Author: Naftali Harris
 """
 
-from __future__ import division
 
 def main():
     pass
