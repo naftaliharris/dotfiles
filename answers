@@ -55,7 +55,7 @@ $ gcc prog.c -o prog -lpthread
 Your favorite pdf viewer:
 $ okular file.pdf
 
-Figure out your IP, MAC, and connection type:
+Look at ARP tables:
 $ arp
 
 Listen in on TCP packets:
@@ -136,3 +136,63 @@ Get the right aspect ratio in mplayer:
 After launching the video with
 $ mplayer video_file
 , just hit 'f'
+
+Open vim file to where you were last editting:
+'"
+(Apostrophe, then double-quote)
+
+Quit hanging ssh session:
+RETURN ~ .
+
+Encrypt a file with password, then decrypt it:
+$ gpg -c file
+$ gpg file.gpg
+
+Encrypt a file with PGP for emailing:
+$ gpg --armor --encrypt file
+
+Make a cron job, (runs periodically):
+$ crontab -e
+Then do
+@hourly /path/to/script
+
+How to use rysnc:
+rsync -avz --delete-excluded ../public/ ssh.phx.nearlyfreespeech.net:
+
+Enter a python program when it crashes:
+python -i main.py
+then:
+>>> import pdb; pdb.pm()
+
+Split a file into its filename and extension in bash:
+filename=$(basename "$fullfile")
+extension="${filename##*.}"
+filename="${filename%.*}"
+
+Restart your mouse on Zeus:
+$ sudo rmmod psmouse 
+$ sudo modprobe psmouse 
+
+Cat with text wrapped to 80 characters
+fold somefile.txt -w 80 -s
+
+Read elf files:
+$ readelf -a -W somefile.o
+$ objdump -d somefile.o
+
+Query DNS servers:
+$ dig @some.dns.server some.fqdn.
+Can also do
+$ dig @some.dns.server some.fqdn. MX
+
+Use tags with vim:
+In top level of the project, run
+$ ctags -R *
+then in vim, use CTRL-] to find the tag, and CTRL-T to go back, and ALT-] to vsplit it.
+
+Install a .deb file:
+sudo dpkg -i whatever.deb
+
+Restart the wireless drivers on this machine:
+$ sudo modprobe -r rtl8192ce
+$ sudo modprobe rtl8192ce

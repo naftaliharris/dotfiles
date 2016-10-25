@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+
+import sys
+
+xs = [float(line) for line in sys.stdin.readlines() if line.strip()]
+print sum(xs) / len(xs)

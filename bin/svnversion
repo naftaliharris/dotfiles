@@ -1,0 +1,3 @@
+#!/bin/bash
+# Because of https://github.com/yyuu/pyenv/issues/14#issuecomment-17001331
+echo exported

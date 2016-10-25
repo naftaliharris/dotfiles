@@ -111,21 +111,43 @@ alias clera='clear'
 alias claer='clear'
 alias clar='clear'
 alias okular='okular >& /dev/null'
-alias eog='eog >& /dev/null'
-alias daylog='oo ~/docs/10-11/other/daylog.xls & exit'
 alias xb='xboard -fcp "./chess" -fd /home/naftali/docs/other/CChess'
 alias fight='xboard -scp "./markovian" -sd /home/naftali/markovian -mode twomachines'
 alias antiword='antiword -w $COLUMNS'
 alias lynx='lynx -accept-all-cookies'
-#echo 'O Naftali, Almightly Lord of the gnome-terminal, by Your Grace bestow Your Greatness upon this lowly session.'
 alias phyton='python'
+alias pyton='python'
 alias pyhton='python'
+alias pyton='python'
+alias pytohn='python'
 alias xclip='xclip -selection clipboard'
+alias acroread='acroread >& /dev/null'
+alias eom='eom >& /dev/null'
+alias iv='vim -O'
+alias vi='vim -O'
+alias vs='vim -O'
+#alias ipython='ipython --pylab'
+alias findf='find . -type f | xargs grep --color'
+alias libreoffice='libreoffice4.1'
+alias ctags='/usr/bin/ctags'  # There's also one in /usr/local/bin/ctags, which is some kind of old version
+alias cutc='cut -d ","'
+alias gdb='gdb --quiet'
 export EDITOR='vim'
-# std
+
+PS1="\`if [ \$? = 0 ]; then echo \[\e[32\;1m\]\w\\$ \[\e[0m\]; else echo \[\e[31\;1m\]\w\\$ \[\e[0m\]; fi\`"
+
+set -o vi
+
+#echo "O Naftali, Almightly Lord of the terminal, by Your Grace bestow Your Greatness upon Your lowly, humble, and undeserving servant, $HOSTNAME." 1>&2
 
 # Sets the Mail Environment Variable
 MAIL=/var/spool/mail/naftali && export MAIL
 
 # Add ~/bin to PATH
 export PATH=$HOME/bin:$PATH
+
+# Add cabal to PATH
+export PATH=$HOME/.cabal/bin:$PATH
+
+# Add julia to PATH
+export PATH=$HOME/repos/julia:$PATH

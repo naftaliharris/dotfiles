@@ -28,3 +28,7 @@ clear<-function(){system("clear")}
 wideScreen <- function(howWide=Sys.getenv("COLUMNS")) {
       options(width=as.integer(howWide))
 }
+local({r <- getOption("repos")
+       r["CRAN"] <- "http://cran.r-project.org" 
+       options(repos=r)
+})

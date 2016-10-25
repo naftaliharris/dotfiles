@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# An enhancement to the "python" executable that automatically launches you into the python debugger on error.
+# 
+# Use it like you would the "python" executable, for example:
+# $ trypy somefile.py
+# or
+# $ trypy somefile.py arg1 arg2
+# 
+# By Naftali Harris, with great thanks to 
+# http://stackoverflow.com/questions/242485/starting-python-debugger-automatically-on-error#answer-242514
+# for showing how to enter the debugger on failure!
+
+if [[ $# -lt 1 ]]
+then
+    echo "Usage:"
+    echo "$ `basename $0` somefile.py"
+    echo "$ `basename $0` somefile.py arg1 [arg2] ..."
+    exit -1
+fi
+
+python -c "
+import sys
+sys.argv = sys.argv[1:] # remove '-c'
+del sys # remove sys so stay clean
+try:
+    execfile('$1')
+except:
+    import sys, traceback, pdb
+    type, value, tb = sys.exc_info()
+    traceback.print_exc()
+    pdb.post_mortem(tb)
+" "$@"
