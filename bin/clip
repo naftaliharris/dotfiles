@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ $(uname) == "Linux" ]
+then
+    xclip -selection clipboard <&0
+else
+    pbcopy <&0
+fi
