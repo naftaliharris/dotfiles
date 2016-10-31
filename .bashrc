@@ -65,6 +65,25 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Use like: $ ismac && echo "THIS IS A MAC" || echo "THIS IS A LINUX"
+ismac() {
+    if [ $(uname) == "Darwin" ]
+    then
+        return 0
+    else
+        return 1
+    fi
+}
+export -f ismac
+
+if [ $(uname) == "Darwin" ]
+then
+    shred() {
+       gshred "$@"
+    }
+    export -f shred
+fi
+
 if [ $(uname) == "Darwin" ]
 then
     LS="gls --color"  # install with brew install coreutils
