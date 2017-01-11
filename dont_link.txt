@@ -3,3 +3,4 @@ dont_link.txt
 .gitignore
 .git
 deploy.sh
+ipython_config.py
