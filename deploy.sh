@@ -17,6 +17,12 @@ do
     ln -s -f $BASEDIR/$file $HOME/$file
 done
 
+
+# Make keys directory
+mkdir -p ~/keys
+chmod 700 ~/keys
+
+
 # Do this last so that if it fails (e.g. if IPython isn't installed), we've
 # still done the previous stuff.
 ipython create profile
