@@ -163,7 +163,7 @@ alias cutc='cut -d ","'
 alias gdb='gdb --quiet'
 export EDITOR='vim'
 
-PS1="\`if [ \$? = 0 ]; then echo \[\e[32\;1m\]\w\\$ \[\e[0m\]; else echo \[\e[31\;1m\]\w\\$ \[\e[0m\]; fi\`"
+PS1="\`if [ \$? = 0 ]; then echo \[\e[32\;1m\u@\h:\]\w\\$ \[\e[0m\]; else echo \[\e[31\;1m\u@\h:\]\w\\$ \[\e[0m\]; fi\`"
 
 set -o vi
 
