@@ -41,7 +41,7 @@ def main():
             curr = check_output(command, shell=True)
             if curr == prev:
                 subject = "'$ %s' stopped changing at %s UTC" % (command, datetime.utcnow())
-                message = "...on %s.\n\n'$ %s' did not change for %d seconds.\n\nFinished with (last 5000 characters):\n\n%s" % (HOSTNAME, command, seconds, curr[:5000])
+                message = "...on %s.\n\n'$ %s' did not change for %d seconds.\n\nFinished with (last 10000 characters):\n\n%s" % (HOSTNAME, command, seconds, curr[:10000])
                 break
             else:
                 prev = curr
