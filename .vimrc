@@ -27,6 +27,7 @@ autocmd FileType text setlocal keywordprg=sdcv "Changes SHIFT-K to pull up dicti
 autocmd Filetype tex setlocal indentexpr=
 
 autocmd Filetype tsv setlocal noexpandtab
+autocmd Filetype tsv setlocal softtabstop=20
 
 " Jumps to the last place I was editting when I reopen a file
 if has("autocmd")
