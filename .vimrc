@@ -74,3 +74,5 @@ autocmd Filetype markdown setlocal textwidth=80
 
 let g:vimrplugin_term="mate-terminal"
 let vimrplugin_assign=0
+
+autocmd FileType crontab setlocal nowritebackup
