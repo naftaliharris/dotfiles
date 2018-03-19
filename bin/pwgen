@@ -1,5 +1,31 @@
 #!/bin/bash
 
+# A POSIX variable
+OPTIND=1         # Reset in case getopts has been used previously in the shell.
+
+# Initialize our own variables:
+N=12
+ALPHANUMERIC=0
+
+function usage() {
+    echo "$0 -n x -a"
+    echo "-n for password length"
+    echo "-a for a-zA-Z0-9 (alphanumeric) only"
+}
+
+while getopts "h?n:a" opt; do
+    case "$opt" in
+    h|\?)
+        usage
+        exit 0
+        ;;
+    a)  ALPHANUMERIC=1
+        ;;
+    n)  N=$OPTARG
+        ;;
+    esac
+done
+
 if [ $(uname) == "Darwin" ]
 then
     TR=gtr
@@ -7,4 +33,11 @@ else
     TR=tr
 fi
 
-$TR -dc 'A-Za-z0-9_~!@#$%^&*()' < /dev/urandom | head -c 12 | xargs
+if [ $ALPHANUMERIC == 1 ]
+then
+    CHRS='A-Za-z0-9'
+else
+    CHRS='A-Za-z0-9_~!@#$%^&*()'
+fi
+
+$TR -dc $CHRS < /dev/urandom | head -c $N | xargs
