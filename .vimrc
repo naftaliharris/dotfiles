@@ -62,9 +62,6 @@ set foldnestmax=10
 "Look recursively up for tags folder
 set tags=./tags;/
 
-"Use ALT-] to open tag in a new vertical split
-map ] :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-
 "Look farther back for syntax
 autocmd BufEnter * :syntax sync fromstart
 
