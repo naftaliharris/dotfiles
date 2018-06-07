@@ -181,4 +181,10 @@ export PATH=$HOME/.cabal/bin:$PATH
 # Add julia to PATH
 export PATH=$HOME/repos/julia:$PATH
 
+# Add go to PATH
+export GOPATH=$HOME/go
+
+# Add arc to PATH
+export PATH=$PATH:$HOME/repos/arcanist/bin/
+
 export TERM=xterm  # So that when vim closes, you don't see crap everywhere above in iterm2. Also, go to prefs->profiles->terminal and uncheck "Save lines to scrollback in alternate screen mode"
