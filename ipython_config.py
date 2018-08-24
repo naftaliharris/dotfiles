@@ -37,8 +37,15 @@ except:
 else:
     pd.set_option('max_rows', 250)              # Number of rows to show in a DataFrame
     pd.set_option('display.width', None)        # auto-determine the width (more than 80)
-    pd.set_option('display.max_columns', 50)    # Number of columns (Series) to show
+    pd.set_option('display.max_columns', 100)   # Number of columns (Series) to show
     pd.set_option('display.max_colwidth', 100)  # Length of each column
+try:
+    import matplotlib
+except:
+    pass
+else:
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
 """]
 
 ## A list of dotted module names of IPython extensions to load.
