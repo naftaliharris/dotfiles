@@ -108,6 +108,7 @@ fi
 alias ll="$LS -alF"
 alias la="$LS -A"
 alias l="$LS" #added by Naftali on 2/20/11
+alias lrt="$LS -lrt | tail -n"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
